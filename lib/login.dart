@@ -100,6 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                         margin: EdgeInsets.only(bottom: 20),
                         child: TextFormField(
                           controller: _username,
+                          key: Key('UsernameField'),
                           validator: (value) {
                             if (value.isEmpty) {
                               return 'Please fill this field';
@@ -131,11 +132,12 @@ class _LoginPageState extends State<LoginPage> {
                         margin: EdgeInsets.only(bottom: 20),
                         child: TextFormField(
                           controller: _password,
+                          key: Key('PasswordField'),
                           obscureText: _passwordHide,
 
                           validator: (value) {
                             if (value.length < 8) {
-                              return 'Enter password at leaset 8 characters';
+                              return 'Enter password at least 8 characters';
                             }
                             return null;
                           },

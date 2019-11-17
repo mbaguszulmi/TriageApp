@@ -1,6 +1,10 @@
 os:
   - linux
 
+env:
+  global:
+    - CURRENT_BRANCH=$(git ls-remote origin | sed -n "\|$TRAVIS_COMMIT\s\+refs/heads/|{s///p}")
+
 language: android
 
 licenses:
@@ -58,6 +62,8 @@ script:
   - flutter test
   - echo "TRAVIS_TAG = $TRAVIS_TAG"
   - echo "TRAVIS_BUILD_NUMBER = $TRAVIS_BUILD_NUMBER"
+  - echo "TRAVIS_BRANCH = $TRAVIS_BRANCH"
+  - echo "CURRENT_BRANCH = $CURRENT_BRANCH"
 
 before_deploy:
   - flutter build apk --build-name $TRAVIS_TAG --build-number $TRAVIS_BUILD_NUMBER --split-per-abi
@@ -72,7 +78,7 @@ deploy:
   edge: true
   on:
     tags: true
-    condition: $TRAVIS_BRANCH = master
+    condition: $CURRENT_BRANCH = master
 
 cache:
   directories:
