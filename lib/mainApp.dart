@@ -32,7 +32,7 @@ class _MainAppState extends State<MainApp> {
       bottomNavigationBar: BottomAppBar(
         color: Colors.transparent,
         elevation: 0,
-        shape: CircularNotchedRectangle(),
+        // shape: CircularNotchedRectangle(),
         child: Container(
           padding: EdgeInsets.only(left: 20, right: 20),
           height: 110,
