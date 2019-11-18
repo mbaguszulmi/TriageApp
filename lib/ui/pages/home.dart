@@ -15,7 +15,6 @@ class _HomeState extends State<Home> {
       body: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             ConstrainedBox(
               constraints: BoxConstraints(
@@ -29,6 +28,7 @@ class _HomeState extends State<Home> {
                   borderRadius: BorderRadius.circular(20)
                 ),
                 child: Stack(
+                  alignment: Alignment.center,
                   children: <Widget>[
                     Positioned(
                       bottom: 0,
@@ -41,7 +41,8 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     Column(
-                      mainAxisSize: MainAxisSize.min,
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Container(
                           width: MediaQuery.of(context).size.width - 40,
@@ -58,6 +59,8 @@ class _HomeState extends State<Home> {
                                 backgroundColor: Color(0xFFEEEEEE),
                                 center: Text('Total'),
                                 circularStrokeCap: CircularStrokeCap.round,
+                                animation: true,
+                                animationDuration: 500,
                               ),
                               CircularPercentIndicator(
                                 radius: MediaQuery.of(context).size.width*0.3,
@@ -66,6 +69,8 @@ class _HomeState extends State<Home> {
                                 progressColor: Color(0xFFFFBF85),
                                 backgroundColor: Color(0xFFEEEEEE),
                                 circularStrokeCap: CircularStrokeCap.round,
+                                animation: true,
+                                animationDuration: 600,
                               ),
                               CircularPercentIndicator(
                                 radius: MediaQuery.of(context).size.width*0.4,
@@ -74,6 +79,8 @@ class _HomeState extends State<Home> {
                                 progressColor: Color(0xFF29CC97),
                                 backgroundColor: Color(0xFFEEEEEE),
                                 circularStrokeCap: CircularStrokeCap.round,
+                                animation: true,
+                                animationDuration: 700,
                               ),
                             ],
                           ),
